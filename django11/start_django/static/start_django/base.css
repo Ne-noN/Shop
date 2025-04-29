@@ -1,0 +1,264 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #414141;
+}
+
+#header{
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+    padding: 10px, 20px;
+    text-align: center;
+}
+
+.logo{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 24px;
+}
+#subheader{
+    color: rgb(0, 0, 0);
+    padding: 10px, 20px;
+    text-align: right;
+}
+
+
+#content{
+    display: flex;
+    margin: 20px;
+}
+
+#sidebar{
+    width: 25%;
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+h1{
+    font-size: 28px;
+    line-height: 1.5;
+    color: rgb(0, 0, 0);
+}
+
+h2{
+    font-size: 18px;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+}
+
+h3{
+    font-size: 16px;
+    margin-top: 20px;
+    color: rgb(177, 177, 177);
+}
+
+P{
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
+
+#sidebar ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#sidebar li{
+    margin: 10px 0;
+}
+#sidebar li.selected{
+    font-weight: bold;
+}
+
+
+/*Основной контент!*/
+#main{
+    width: 75%;
+    padding-left: 20;
+}
+
+.product-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+    /*flex-wrap: wrap;*/
+}
+
+.item{
+    background-color: rgb(68, 68, 68);
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.333%-20px);   
+}
+
+.item ing{
+    max-width: 100%;
+    height: auto;
+}
+
+.product-detail{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 10px;
+    width: 800px;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.item ing{
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.price{
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+}
+
+.button{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover{
+    background-color: rgb(255, 255, 255);
+}
+
+/*Ссылка назад к списку продуквтов*/
+a{
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: rgb(133, 133, 133);
+}
+
+a:hover{
+    text-decoration: underline;
+
+}
+
+.cart{
+    font-size: 16px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart th, .cart td{
+    border: 5px solid rgb(0, 0, 0);
+    padding: 10px;
+    text-align: left;
+}
+
+.cart th{
+    background-color: rgb(80, 80, 80);
+    color: rgb(0, 0, 0);
+}
+
+.num{
+    text-align: right;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.order-info{
+    background-color: rgb(80, 80, 80);
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.order-info h3{
+    margin-top: 0px;
+}
+
+.order-info ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.order-info li{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px, 0px;
+    border-bottom: 4px solid rgb(0, 0, 0);
+}
+
+.order-info li:last-child{
+    border-bottom: none;
+}
+
+.order-info spar{
+    font-weight: bold;
+    color:rgb(255, 255, 255);
+}
+
+.order-form{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.order-form p{
+    text-align: center;
+}
+
+.order-form input[type='submit']{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 10px, 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.order-form input[type='submit']:hover{
+    background-color: rgb(255, 255, 255);
+}
+.form-group{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+ label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+ }
+
+ input[type="text"],
+ input[type="email"],
+ input[type="password"],
+ select {
+    width: 200%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    box-sizing: border;
+    display: flex;
+    align-items: right;
+
+ }
+ .error {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+ }
+
+ .small {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+ }

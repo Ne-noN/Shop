@@ -1,0 +1,53 @@
+{% extends "start_django/base.html" %}
+{% load static %}
+{% block title %}
+    Ваша корзина с товарами
+{% endblock %}
+
+{% block content %}
+    <h1>Ваша корзина с товарами</h1>
+    <table class = 'cart'>
+        <thead>
+            <tr>
+                <th>Картинка</th>
+                <th>Продукт</th>
+                <th>Количество</th>
+                <th>Удаление</th>
+                <th>Цена за 1 шт</th>
+                <th>Итоговая цена</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in cart %}
+            {% with product=item.product %}
+                <tr>
+                    <td>
+                        <a href="{{ product.get_absolute_url }">
+                            <img src = "
+                                        {% if product.image %}
+                                            {{ product.image.url }}
+                                        {% else %}
+                                            {% static 'img/no_image.png' %}
+                                        {% endif %} ">
+                        </a>
+                    </td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td><a href = "{% url 'cart:cart_remove' product.id %}">Удалить</a></td>
+                    <td class = 'num'> ${{ item.price }}</td>
+                    <td class = 'num'> ${{ item.total_price }}</td>
+                </tr>
+            {% endwith %}
+        {% endfor %}
+        <tr>
+            <td>Итого:</td>
+            <td colspan="4"></td>
+            <td class = 'num'> ${{ cart.get_total_price }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <p class = 'test-right'>
+        <a href = "{% url 'start_django:product_list' %}" class = "button-light">Вернуться к покупкам</a>
+        <a href = "{% url 'orders:order_create' %}" class="button">Оформить заказ</a>
+    </p>
+{% endblock %}
