@@ -123,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[
-    BASE_DIR /'start_django/static',
+    os.path.join(BASE_DIR, 'start_django/static\css'),
 ]
 
 # Default primary key field type
